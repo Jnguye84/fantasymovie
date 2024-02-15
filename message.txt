@@ -1,0 +1,49 @@
+Unexpected Budget Cut:
+        The studio faces financial challenges, and you need to decide whether to:
+        a) Cut certain scenes or special effects
+        b) Seek additional funding
+
+    Last-Minute Script Changes:
+        The scriptwriter proposes significant changes to the story. Decide whether to:
+        a) Embrace the changes for a fresh perspective
+        b) Stick to the original vision
+
+    Technical Malfunction During Filming:
+        A key piece of equipment breaks down during filming. Decide whether to:
+        a) Pause production until it's fixed
+        b) Find creative workarounds to continue shooting
+
+    Lead Actor Injured On Set:
+        The lead actor sustains an injury during a stunt. Decide whether to:
+        a) Pause production until they recover
+        b) Use a stunt double for critical scenes
+
+    Negative Test Audience Reaction:
+        The test audience responds negatively to a preview. Decide whether to:
+        a) Conduct reshoots to address concerns
+        b) Stick to the original edit and risk audience dissatisfaction
+
+    Director Quits Midway:
+        The director resigns due to creative differences. Decide whether to:
+        a) Hire a new director and adapt to the change
+        b) Persuade the original director to return
+
+    Casting Controversy:
+        One of the actors is involved in a public controversy. Decide whether to:
+        a) Replace the actor to avoid negative publicity
+        b) Stand by the actor and issue a statement
+
+    Legal Issues with Filming Location:
+        There are legal challenges to continue filming in the chosen location. Decide whether to:
+        a) Resolve the legal issues and continue
+        b) Find an alternative location quickly
+
+    Special Effects Failure:
+        A crucial special effects sequence fails to impress. Decide whether to:
+        a) Invest more resources to improve it
+        b) Simplify the sequence to save time and resources
+
+    Sudden Change in Market Trends:
+        A competing movie with a similar theme gains unexpected popularity. Decide whether to:
+        a) Stick to the original concept
+        b) Make adjustments to cater to current trends
