@@ -41,52 +41,27 @@ const uploadconfirm = document.getElementById('uploadconfirm').addEventListener(
             }
             console.log(letterboxd)
         }
+
     });
 });
-
 const createcard = document.getElementById('createcard').addEventListener('click', () => {
     for (let i = 0; i < 6; i++) { //creates 5 different movies
         let x = Math.floor(Math.random() *movietitlelist.length); //generate random movie number index
         let movie = {
-            movietitle: letterboxd.movie.movie[x].Name,
-            year: letterboxd.year[x].Year,
-            review:  letterboxd.review[x].Review,
-            timewatched: letterboxd.timewatched[x].Date,
-            rating: letterboxd.rating[x].Rating,
+            movietitle: letterboxd.movie[x],
+            year:letterboxd.year[x],
+            review: letterboxd.review[x],
+            timewatched: letterboxd.timewatched[x],
+            rating: letterboxd.rating[x],
         };
         deck.push(movie)
-        console.log(movie)
       }
-}) //create random number that picks movie, create deck of card for movies
+    let x_second = Math.floor(Math.random() *6);
+    localStorage.setItem('movie-title', deck[x_second].movietitle)
+    localStorage.setItem('year', deck[x_second].year)
+    localStorage.setItem('review', deck[x_second].review)
+    localStorage.setItem('rating', deck[x_second].rating)
+    localStorage.setItem('timewatched', deck[x_second].timewatched)
+    window.location.href="index.html";
 
-//document.getElementById("createcard").onclick = creatingmovie();
-
-/*
-let movie = {
-    movietitle:,
-    year:,
-    attack:,
-    scandal:,
-    clout:,
-    review:,
-    timewatched:,
-    rating:,
-    power:
-};
-
-console.log(movie);
-
-function creatingmovie(results){
-    movietitle = document.getElementsByClassName("v3_5")
-    year = document.getElementsByClassName("v4_2")
-    attack = document.getElementsByClassName("v4_13")
-    scandal = document.getElementsByClassName("v4_15")
-    clout = document.getElementsByClassName("v4_16")
-    review = document.getElementsByClassName("v4_18")
-    rating = document.getElementsByClassName("v4_19")
-    timewatched = document.getElementsByClassName("v4_20")
-    power = document.getElementsByClassName("v4_14")
-   
-
-}
-*/
+}) //create random number that picks movie, create deck of card for movies, uploads card pictures onto trading card,

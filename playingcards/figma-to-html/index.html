@@ -5,31 +5,88 @@
         <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet" />
         <link href="./css/main.css" rel="stylesheet" />
         <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function Reload(){
+                
+                sleep(5000)
+            }
+            function sleep(t){
+                setTimeout(() => {
+                location.reload()
+            }, t);
+            }
+        </script>
     </head>
+    <!-- <body onload="Javascript:Reload();"> -->
     <body>
         <div class="v4_21">
             <div class="v3_2">
-            </div>
-            <span class="v3_5">MOVIE TITLE</span>
-            <span class="v4_2">YEAR</span>
-            <span class="v4_13">ATTACK HERE</span>
+            </div> 
+              <!-- this is movie title  -->
+              <span class="v3_5" id="movie-title"></span>
+            <!-- <span class="v3_5"><p id="movie-title"></p></span> -->
+            <!-- year -->
+            <span class="v4_2" id="year"></span>
+            <!-- attack here  -->
+            <span class="v4_13" id="attack-damage"></span>
+            <!--scandal score  -->
             <span class="v4_15">SCANDAL HERE</span>
-            <span class="v4_16">CLOUT HERE</span>
-            <span class="v4_18">YOUR REVIEW</span>
-            <span class="v4_19">YOUR RATING</span>
-            <span class="v4_20">TIME WATCHED</span>
+            <!-- clout score  -->
+            <span class="v4_16" id="clout"></span>
+            <!-- review  -->
+            <span class="v4_18" id="review"></span>
+            <!--rating -->
+            <span class="v4_19" id="rating"></span>
+            <!-- time watched  -->
+            <span class="v4_20" id="timewatched"></span>
+            <!-- power -->
             <span class="v4_14">POWER HERE</span>
+            <!-- attack  -->
             <span class="v4_5">attack damage</span>
             <span class="v4_6">super power</span>
+            <!-- image  -->
             <div class="v4_8">
-
+                <img id="image" alt="Stored Image">
             </div>
+            <!--scandal score -->
             <span class="v4_10">scandal score</span>
+            <!-- cloutscore  -->
             <span class="v4_12">clout score</span>
             <span class="v4_17">your stats</span>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
+            document.getElementById("movie-title").textContent = localStorage.getItem('movie-title');
+            $.getJSON(`https://api.themoviedb.org/3/search/movie?api_key=bb76d810eac6dda796c6389702e136b2&language=en-US&query=${localStorage.getItem('movie-title')}`,function(data){
+                console.log(data.results)
+                localStorage.setItem('image',data.results[0].poster_path)
+                localStorage.setItem('clout', data.results[0].popularity)
+                localStorage.setItem('movie-id', data.results[0].id)
+                console.log(data.results[0].id)
+                })//getting poster, clout score, movie-id
+
+            $.getJSON(`https://api.themoviedb.org/3/movie/${localStorage.getItem('movie-id')}/credits?api_key=bb76d810eac6dda796c6389702e136b2&language=en-US`,function(data){
+                let x = Math.floor(Math.random() *data.cast.length)
+                let total = 0;
+                for (let i = 0; i < data.cast.length; i++) {
+                    total = total + data.cast[i].popularity
+                }
+                localStorage.setItem('attack-damage', total)
+                localStorage.setItem('random-character', data.cast[x].character)
+                localStorage.setItem('random-character-picture', data.cast[x].profile_path)
+            })//getting attack damage through star's popularity score, getting random star's name and picture from the movie
+            var review_short = localStorage.getItem('review').slice(0, 100);
+            console.log(review_short)
+            document.getElementById("year").textContent = localStorage.getItem('year');
+            document.getElementById("review").textContent = review_short;
+            document.getElementById("rating").textContent = localStorage.getItem('rating');
+            document.getElementById("timewatched").textContent = localStorage.getItem('timewatched');
+            document.getElementById("clout").textContent = localStorage.getItem('clout');
+            document.getElementById("attack-damage").textContent = localStorage.getItem('attack-damage')
+            document.getElementById("image").src = `https://image.tmdb.org/t/p/w500${localStorage.getItem('image')}`
             
         </script>
-</body>
+        <script type="module" src="gemini_test.js"></script>
+    </body>
 </html>
