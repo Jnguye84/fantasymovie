@@ -1,3 +1,5 @@
+// import { result } from "./MainModule.mjs";
+// console.log(await result)
 /*
 const movietitle
 const year
@@ -11,6 +13,9 @@ const numbermovieswatched
 */
 //letterboxd data needed: reviews.csv for year, movietitle, review, rating, timewatched  
 // import { run } from './gemini_test.js'
+
+import { result } from "./MainModule";
+
 
 // import { run } from "./gemini_test";
 
@@ -67,7 +72,7 @@ const createcard = document.getElementById('createcard').addEventListener('click
     localStorage.setItem('review', deck[x_second].review)
     localStorage.setItem('rating', deck[x_second].rating)
     localStorage.setItem('timewatched', deck[x_second].timewatched)
-
+    console.log(result)
     window.location.href="index.html";
 
 }) //create random number that picks movie, create deck of card for movies, uploads card pictures onto trading card,
