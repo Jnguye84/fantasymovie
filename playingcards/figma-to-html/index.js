@@ -10,6 +10,11 @@ const rating
 const numbermovieswatched
 */
 //letterboxd data needed: reviews.csv for year, movietitle, review, rating, timewatched  
+// import { run } from './gemini_test.js'
+
+// import { run } from "./gemini_test";
+
+// run()
 const movietitlelist = [];
 const reviewlist = [];
 const ratinglist = [];
@@ -62,6 +67,7 @@ const createcard = document.getElementById('createcard').addEventListener('click
     localStorage.setItem('review', deck[x_second].review)
     localStorage.setItem('rating', deck[x_second].rating)
     localStorage.setItem('timewatched', deck[x_second].timewatched)
+
     window.location.href="index.html";
 
 }) //create random number that picks movie, create deck of card for movies, uploads card pictures onto trading card,
